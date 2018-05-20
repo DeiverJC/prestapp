@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Clients')
+@section('title', 'Companies')
 
 @section('breadcrumb')
-    <li class="active">Clients</li>
+    <li class="active">Companies</li>
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@
 
     <div class="white-box">
         <h1 class="box-title">
-            <span class="text-uppercase">MANAGE Clients</span>
-            <a class="btn btn-primary pull-right" style="margin-top: 7px;margin-bottom: 5px" href="{!! route('clients.create') !!}">Add New</a>
+            <span class="text-uppercase">MANAGE Companies</span>
+            <a class="btn btn-primary pull-right" style="margin-top: 7px;margin-bottom: 5px" href="{!! route('companies.create') !!}">Add New</a>
         </h1>
         <div class="table-responsive">
-            @include('clients.table')
+            @include('companies.table')
         </div>
         <div class="text-center">
             

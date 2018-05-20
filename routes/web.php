@@ -21,4 +21,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::resource('clients', 'ClientController');
+
+
+
+
+
+
+Route::resource('bancs', 'BancController');
+
+
+
+
+
+
+
+Route::resource('companies', 'CompanyController');
+
+Route::resource('customers', 'CustomerController');

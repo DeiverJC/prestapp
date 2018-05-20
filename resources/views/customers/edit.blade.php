@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Clients')
+@section('title', 'Edit Customers')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item "><a href="{{ route('clients.index') }}">Clients</a></li>
-    <li class="breadcrumb-item"><a href="{{ route('clients.show', $client->id) }}">{{ $client->id }}</a></li>
+    <li class="breadcrumb-item "><a href="{{ route('customers.index') }}">Customers</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('customers.show', $customer->id) }}">{{ $customer->id }}</a></li>
     <li class="breadcrumb-item active">Editar</li>
 @endsection
 
@@ -14,13 +14,13 @@
    <div class="panel panel-info">
         <div class="panel-wrapper collapse in" aria-expanded="true">
             <div class="panel-body">
-                    {!! Form::model($client, ['route' => ['clients.update', $client->id], 'method' => 'patch', 'class' => 'form-material']) !!}
+                    {!! Form::model($customer, ['route' => ['customers.update', $customer->id], 'method' => 'patch', 'class' => 'form-material']) !!}
                     <div class="form-body">
-                        <h3 class="box-title">Client Info</h3>
+                        <h3 class="box-title">Customer Info</h3>
                         <hr>
                         <div class="row">
 
-                            @include('clients.fields')
+                            @include('customers.fields')
 
                         </div>
                     </div>

@@ -2,7 +2,6 @@
     {
         "name": "id",
         "dbType": "increments",
-        "htmlType": "",
         "validations": "",
         "searchable": false,
         "fillable": false,
@@ -18,17 +17,8 @@
         "searchable": true
     },
     {
-        "name": "ocupation",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
-        "searchable": true
-    },
-    {
-        "name": "email",
-        "dbType": "string",
-        "htmlType": "email",
-        "searchable": true
+        "type": "relation",
+        "relation": "1tm,Customer"
     },
     {
         "name": "created_at",

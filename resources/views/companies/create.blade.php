@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Create $MODEL_NAME_PLURAL_HUMAN$')
+@section('title', 'Create Companies')
 
 @section('breadcrumb')
     <li class="breadcrumb-item ">
-        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}">
-            $MODEL_NAME_PLURAL_HUMAN$
+        <a href="{{ route('companies.index') }}">
+            Companies
         </a>
     </li>
     <li class="breadcrumb-item active">Register</li>
@@ -16,13 +16,13 @@
     <div class="panel panel-info">
         <div class="panel-wrapper collapse in" aria-expanded="true">
             <div class="panel-body">
-                {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store', 'class' => 'form-material']) !!}
+                {!! Form::open(['route' => 'companies.store', 'class' => 'form-material']) !!}
                     <div class="form-body">
-                        <h3 class="box-title">$MODEL_NAME_HUMAN$ Info</h3>
+                        <h3 class="box-title">Company Info</h3>
                         <hr>
                         <div class="row">
 
-                            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                            @include('companies.fields')
 
                         </div>
                     </div>

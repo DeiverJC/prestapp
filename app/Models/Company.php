@@ -6,28 +6,25 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Client
+ * Class Company
  * @package App\Models
- * @version April 25, 2018, 3:11 pm UTC
+ * @version May 20, 2018, 10:37 pm UTC
  *
+ * @property \Illuminate\Database\Eloquent\Collection Customer
  * @property string name
- * @property string ocupation
- * @property string email
  */
-class Client extends Model
+class Company extends Model
 {
     use SoftDeletes;
 
-    public $table = 'clients';
+    public $table = 'companies';
     
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'name',
-        'ocupation',
-        'email'
+        'name'
     ];
 
     /**
@@ -36,9 +33,7 @@ class Client extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
-        'ocupation' => 'string',
-        'email' => 'string'
+        'name' => 'string'
     ];
 
     /**
@@ -47,9 +42,14 @@ class Client extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'ocupation' => 'required'
+        'name' => 'required'
     ];
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function customers()
+    {
+        return $this->hasMany(\App\Models\Customer::class);
+    }
 }

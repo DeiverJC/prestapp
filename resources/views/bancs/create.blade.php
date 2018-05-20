@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Create Clients')
+@section('title', 'Create Bancs')
 
 @section('breadcrumb')
     <li class="breadcrumb-item ">
-        <a href="{{ route('clients.index') }}">
-            Clients
+        <a href="{{ route('bancs.index') }}">
+            Bancs
         </a>
     </li>
     <li class="breadcrumb-item active">Register</li>
@@ -16,13 +16,13 @@
     <div class="panel panel-info">
         <div class="panel-wrapper collapse in" aria-expanded="true">
             <div class="panel-body">
-                {!! Form::open(['route' => 'clients.store', 'class' => 'form-material']) !!}
+                {!! Form::open(['route' => 'bancs.store', 'class' => 'form-material']) !!}
                     <div class="form-body">
-                        <h3 class="box-title">Client Info</h3>
+                        <h3 class="box-title">Banc Info</h3>
                         <hr>
                         <div class="row">
 
-                            @include('clients.fields')
+                            @include('bancs.fields')
 
                         </div>
                     </div>
