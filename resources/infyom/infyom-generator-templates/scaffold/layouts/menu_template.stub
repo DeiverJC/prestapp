@@ -1,0 +1,5 @@
+<li>
+    <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="waves-effect {{ Request::is('$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
+        <i class="mdi mdi-pencil fa-fw"></i><span class="hide-menu">$MODEL_NAME_PLURAL_HUMAN$</span>
+    </a>
+</li>

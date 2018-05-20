@@ -1,0 +1,26 @@
+@extends('layouts.app')
+
+@section('title', '$MODEL_NAME_PLURAL_HUMAN$')
+
+@section('breadcrumb')
+    <li class="active">$MODEL_NAME_PLURAL_HUMAN$</li>
+@endsection
+
+@section('content')
+
+    @include('flash::message')
+
+    <div class="white-box">
+        <h1 class="box-title">
+            <span class="text-uppercase">MANAGE $MODEL_NAME_PLURAL_HUMAN$</span>
+            <a class="btn btn-primary pull-right" style="margin-top: 7px;margin-bottom: 5px" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Add New</a>
+        </h1>
+        <div class="table-responsive">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
+        </div>
+        <div class="text-center">
+            $PAGINATE$
+        </div>
+    </div>
+@endsection
+

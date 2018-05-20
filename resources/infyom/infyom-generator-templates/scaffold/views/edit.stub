@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('title', 'Edit $MODEL_NAME_PLURAL_HUMAN$')
+
+@section('breadcrumb')
+    <li class="breadcrumb-item "><a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}">$MODEL_NAME_PLURAL_HUMAN$</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$) }}">{{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}</a></li>
+    <li class="breadcrumb-item active">Editar</li>
+@endsection
+
+@section('content')
+
+    @include('adminlte-templates::common.errors')
+   <div class="panel panel-info">
+        <div class="panel-wrapper collapse in" aria-expanded="true">
+            <div class="panel-body">
+                    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch', 'class' => 'form-material']) !!}
+                    <div class="form-body">
+                        <h3 class="box-title">$MODEL_NAME_HUMAN$ Info</h3>
+                        <hr>
+                        <div class="row">
+
+                            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+
+                        </div>
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+
+@endsection
