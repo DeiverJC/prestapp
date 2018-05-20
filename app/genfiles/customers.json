@@ -45,10 +45,10 @@
         "searchable": true
     },
     {
-        "name": "banc_id",
-        "dbType": "integer:unsigned:default,0:foreign,bancs,id",
+        "name": "bank_id",
+        "dbType": "integer:unsigned:default,0:foreign,banks,id",
         "htmlType": "text",
-        "relation": "1t1,Banc,banc_id,id"
+        "relation": "1t1,Bank,bank_id,id"
     },
     {
         "name": "company_id",

@@ -43,21 +43,19 @@
     @endif
 </div>
 
-<!-- Banc Id Field -->
-<div class="form-group col-sm-6{{ $errors->has('banc_id') ? ' has-error' : '' }}">
-    {!! Form::label('banc_id', 'Banc Id:') !!}
-    {!! Form::select('banc_id', $bancs, null, ['class' => 'form-control', 'placeholder' => 'Pick a banc...']); !!}
-    {{-- {!! Form::text('banc_id', null, ['class' => 'form-control', 'placeholder' => 'Type banc_id..']) !!} --}}
-    @if ($errors->has('banc_id'))
-        <small class="help-block"> {{ $errors->first('banc_id') }}</small>
+<!-- Bank Id Field -->
+<div class="form-group col-sm-6{{ $errors->has('bank_id') ? ' has-error' : '' }}">
+    {!! Form::label('bank_id', 'Bank Id:') !!}
+    {!! Form::text('bank_id', null, ['class' => 'form-control', 'placeholder' => 'Type bank_id..']) !!}
+    @if ($errors->has('bank_id'))
+        <small class="help-block"> {{ $errors->first('bank_id') }}</small>
     @endif
 </div>
 
 <!-- Company Id Field -->
 <div class="form-group col-sm-6{{ $errors->has('company_id') ? ' has-error' : '' }}">
     {!! Form::label('company_id', 'Company Id:') !!}
-    {!! Form::select('company_id', $companies, null, ['class' => 'form-control', 'placeholder' => 'Pick a company...']); !!}
-    {{-- {!! Form::text('company_id', null, ['class' => 'form-control', 'placeholder' => 'Type company_id..']) !!} --}}
+    {!! Form::text('company_id', null, ['class' => 'form-control', 'placeholder' => 'Type company_id..']) !!}
     @if ($errors->has('company_id'))
         <small class="help-block"> {{ $errors->first('company_id') }}</small>
     @endif

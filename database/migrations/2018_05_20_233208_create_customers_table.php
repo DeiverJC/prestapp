@@ -17,14 +17,14 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('fist_name');
             $table->string('last_name');
-            $table->bigInteger('dni');
-            $table->bigInteger('cellphone');
+            $table->integer('dni');
+            $table->integer('cellphone');
             $table->string('address');
-            $table->integer('banc_id')->unsigned()->default(0);
+            $table->integer('bank_id')->unsigned()->default(0);
             $table->integer('company_id')->unsigned()->default(0);
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('banc_id')->references('id')->on('bancs');
+            $table->foreign('bank_id')->references('id')->on('banks');
             $table->foreign('company_id')->references('id')->on('companies');
         });
     }

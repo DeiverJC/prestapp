@@ -1,4 +1,4 @@
-<table class="table table-hover manage-u-table color-table inverse-table" id="bancs-table">
+<table class="table table-hover manage-u-table color-table inverse-table" id="banks-table">
     <thead>
         <tr>
             <th>Name</th>
@@ -6,16 +6,16 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($bancs as $banc)
+    @foreach($banks as $bank)
         <tr>
-            <td>{!! $banc->name !!}</td>
-            <td class="text-center">
-                {!! Form::open(['route' => ['bancs.destroy', $banc->id], 'method' => 'delete']) !!}
-                    <a href="{!! route('bancs.show', [$banc->id]) !!}" class='btn btn-info btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-info' data-toggle="tooltip" data-placement="top"
+            <td>{!! $bank->name !!}</td>
+            <td>
+                {!! Form::open(['route' => ['banks.destroy', $bank->id], 'method' => 'delete']) !!}
+                    <a href="{!! route('banks.show', [$bank->id]) !!}" class='btn btn-info btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-info' data-toggle="tooltip" data-placement="top"
                         data-original-title="View client">
                         <i class="ti-eye"></i>
                     </a>
-                    <a href="{!! route('bancs.edit', [$banc->id]) !!}" class='btn btn-warning btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-warning' data-toggle="tooltip" data-placement="top"
+                    <a href="{!! route('banks.edit', [$bank->id]) !!}" class='btn btn-warning btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-warning' data-toggle="tooltip" data-placement="top"
                         data-original-title="Edit client">
                         <i class="ti-pencil-alt"></i>
                     </a>

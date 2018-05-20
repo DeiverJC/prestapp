@@ -6,7 +6,7 @@
         <th>Dni</th>
         <th>Cellphone</th>
         <th>Address</th>
-        <th>Banc Id</th>
+        <th>Bank Id</th>
         <th>Company Id</th>
             <th colspan="3" class="text-center">Action</th>
         </tr>
@@ -19,8 +19,8 @@
             <td>{!! $customer->dni !!}</td>
             <td>{!! $customer->cellphone !!}</td>
             <td>{!! $customer->address !!}</td>
-            <td>{!! $customer->banc->name !!}</td>
-            <td>{!! $customer->company->name !!}</td>
+            <td>{!! $customer->bank_id !!}</td>
+            <td>{!! $customer->company_id !!}</td>
             <td>
                 {!! Form::open(['route' => ['customers.destroy', $customer->id], 'method' => 'delete']) !!}
                     <a href="{!! route('customers.show', [$customer->id]) !!}" class='btn btn-info btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-info' data-toggle="tooltip" data-placement="top"

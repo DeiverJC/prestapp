@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Customer
  * @package App\Models
- * @version May 20, 2018, 10:38 pm UTC
+ * @version May 20, 2018, 11:32 pm UTC
  *
- * @property \App\Models\Banc banc
+ * @property \App\Models\Bank bank
  * @property \App\Models\Company company
  * @property \Illuminate\Database\Eloquent\Collection Loan
  * @property string fist_name
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer dni
  * @property integer cellphone
  * @property string address
- * @property integer banc_id
+ * @property integer bank_id
  * @property integer company_id
  */
 class Customer extends Model
@@ -26,7 +26,7 @@ class Customer extends Model
     use SoftDeletes;
 
     public $table = 'customers';
-
+    
 
     protected $dates = ['deleted_at'];
 
@@ -37,7 +37,7 @@ class Customer extends Model
         'dni',
         'cellphone',
         'address',
-        'banc_id',
+        'bank_id',
         'company_id'
     ];
 
@@ -52,7 +52,7 @@ class Customer extends Model
         'dni' => 'integer',
         'cellphone' => 'integer',
         'address' => 'string',
-        'banc_id' => 'integer',
+        'bank_id' => 'integer',
         'company_id' => 'integer'
     ];
 
@@ -70,19 +70,19 @@ class Customer extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      **/
-    public function banc()
+    public function bank()
     {
-        return $this->belongsTo(\App\Models\Banc::class, 'banc_id', 'id');
+        return $this->hasOne(\App\Models\Bank::class, 'bank_id', 'id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      **/
     public function company()
     {
-        return $this->belongsTo(\App\Models\Company::class, 'company_id', 'id');
+        return $this->hasOne(\App\Models\Company::class, 'company_id', 'id');
     }
 
     /**

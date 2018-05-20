@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use App\Models\Banc;
-use App\Models\Company;
-use Illuminate\Http\Request;
-use App\Repositories\CustomerRepository;
-use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
+use App\Repositories\CustomerRepository;
+use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
+use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 class CustomerController extends AppBaseController
 {
@@ -34,7 +32,8 @@ class CustomerController extends AppBaseController
         $this->customerRepository->pushCriteria(new RequestCriteria($request));
         $customers = $this->customerRepository->all();
 
-        return view('customers.index', compact('customers'));
+        return view('customers.index')
+            ->with('customers', $customers);
     }
 
     /**
@@ -44,10 +43,7 @@ class CustomerController extends AppBaseController
      */
     public function create()
     {
-        $bancs = Banc::pluck('name', 'id');
-        $companies = Company::pluck('name', 'id');
-
-        return view('customers.create', compact('bancs', 'companies'));
+        return view('customers.create');
     }
 
     /**

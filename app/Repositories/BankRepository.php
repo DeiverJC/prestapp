@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\Banc;
+use App\Models\Bank;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class BancRepository
+ * Class BankRepository
  * @package App\Repositories
- * @version May 20, 2018, 10:29 pm UTC
+ * @version May 20, 2018, 11:26 pm UTC
  *
- * @method Banc findWithoutFail($id, $columns = ['*'])
- * @method Banc find($id, $columns = ['*'])
- * @method Banc first($columns = ['*'])
+ * @method Bank findWithoutFail($id, $columns = ['*'])
+ * @method Bank find($id, $columns = ['*'])
+ * @method Bank first($columns = ['*'])
 */
-class BancRepository extends BaseRepository
+class BankRepository extends BaseRepository
 {
     /**
      * @var array
@@ -28,6 +28,6 @@ class BancRepository extends BaseRepository
      **/
     public function model()
     {
-        return Banc::class;
+        return Bank::class;
     }
 }

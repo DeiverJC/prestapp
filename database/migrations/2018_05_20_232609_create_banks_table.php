@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBancsTable extends Migration
+class CreateBanksTable extends Migration
 {
 
     /**
@@ -13,7 +13,7 @@ class CreateBancsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bancs', function (Blueprint $table) {
+        Schema::create('banks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateBancsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bancs');
+        Schema::drop('banks');
     }
 }

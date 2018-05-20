@@ -6,18 +6,18 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Banc
+ * Class Bank
  * @package App\Models
- * @version May 20, 2018, 10:29 pm UTC
+ * @version May 20, 2018, 11:26 pm UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection Customer
  * @property string name
  */
-class Banc extends Model
+class Bank extends Model
 {
     use SoftDeletes;
 
-    public $table = 'bancs';
+    public $table = 'banks';
     
 
     protected $dates = ['deleted_at'];

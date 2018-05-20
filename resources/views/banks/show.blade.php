@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Ver Bancs')
+@section('title', 'Ver Banks')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item "><a href="{{ route('bancs.index') }}">Bancs</a></li>
-    <li class="breadcrumb-item active">{{ $banc->id }}</li>
+    <li class="breadcrumb-item "><a href="{{ route('banks.index') }}">Banks</a></li>
+    <li class="breadcrumb-item active">{{ $bank->id }}</li>
 @endsection
 
 @section('content')
@@ -15,19 +15,19 @@
                 <div class="form-horizontal" role="form">
                     <div class="form-body">
                         <h3 class="box-title">
-                            Banc Info
+                            Bank Info
                             <span class="btn-group pull-right">
-                                <a href="{!! route('bancs.edit', [$banc->id]) !!}"
+                                <a href="{!! route('banks.edit', [$bank->id]) !!}"
                                     class="fcbtn btn btn-sm btn-outline btn-info btn-1c">
                                     <i class="ti-pencil-alt"></i> Edit</a>
-                                <a href="{!! route('bancs.index') !!}" class="fcbtn btn btn-sm btn-outline btn-danger btn-1c"><i class="ti-back-left"></i> Back</a></a>
+                                <a href="{!! route('banks.index') !!}" class="fcbtn btn btn-sm btn-outline btn-danger btn-1c"><i class="ti-back-left"></i> Back</a></a>
                             </span>
 
                         </h3>
                         <hr class="m-t-0 m-b-40">
                         <div class="row">
 
-                            @include('bancs.show_fields')
+                            @include('banks.show_fields')
 
                         </div>
                     </div>

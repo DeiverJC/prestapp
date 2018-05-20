@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Banc;
+use App\Models\Bank;
 
-class CreateBancRequest extends FormRequest
+class CreateBankRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreateBancRequest extends FormRequest
      */
     public function rules()
     {
-        return Banc::$rules;
+        return Bank::$rules;
     }
 }

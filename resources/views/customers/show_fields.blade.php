@@ -58,12 +58,12 @@
     </div>
 </div>
 
-<!-- Banc Id Field -->
+<!-- Bank Id Field -->
 <div class="col-md-6">
     <div class="form-group">
-        {!! Form::label('banc_id', 'Banc Id:', ['class' => 'control-label col-md-3 pull-left']) !!}
+        {!! Form::label('bank_id', 'Bank Id:', ['class' => 'control-label col-md-3 pull-left']) !!}
         <div class="col-md-9">
-            <p class="form-control-static"> {!! $customer->banc_id !!} </p>
+            <p class="form-control-static"> {!! $customer->bank_id !!} </p>
         </div>
     </div>
 </div>
