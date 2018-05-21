@@ -17,15 +17,15 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('fist_name');
             $table->string('last_name');
-            $table->integer('dni');
-            $table->integer('cellphone');
+            $table->bigInteger('dni');
+            $table->bigInteger('cellphone');
             $table->string('address');
             $table->integer('bank_id')->unsigned()->default(0);
             $table->integer('company_id')->unsigned()->default(0);
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('bank_id')->references('id')->on('banks');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 

@@ -2,23 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\BankRepository;
+use App\Repositories\CompanyRepository;
 use App\Repositories\CustomerRepository;
 use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
+use App\Http\Requests\CreateCustomerRequest;
+use App\Http\Requests\UpdateCustomerRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class CustomerController extends AppBaseController
 {
     /** @var  CustomerRepository */
     private $customerRepository;
+    /** @var  BankRepository */
+    private $bankRepository;
+    /** @var  CompanyRepository */
+    private $companyRepository;
 
-    public function __construct(CustomerRepository $customerRepo)
+    public function __construct(CustomerRepository $customerRepo, BankRepository $bankRepo, CompanyRepository $companyRepo)
     {
         $this->customerRepository = $customerRepo;
+        $this->bankRepository = $bankRepo;
+        $this->companyRepository = $companyRepo;
     }
 
     /**
@@ -43,7 +51,10 @@ class CustomerController extends AppBaseController
      */
     public function create()
     {
-        return view('customers.create');
+        $banks = $this->bankRepository->pluck('name', 'id');
+        $companies = $this->companyRepository->pluck('name', 'id');
+
+        return view('customers.create', compact('banks', 'companies'));
     }
 
     /**

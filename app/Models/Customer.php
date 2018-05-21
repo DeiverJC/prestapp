@@ -26,7 +26,7 @@ class Customer extends Model
     use SoftDeletes;
 
     public $table = 'customers';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -70,19 +70,19 @@ class Customer extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      **/
     public function bank()
     {
-        return $this->hasOne(\App\Models\Bank::class, 'bank_id', 'id');
+        return $this->belongsTo(\App\Models\Bank::class, 'bank_id', 'id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      **/
     public function company()
     {
-        return $this->hasOne(\App\Models\Company::class, 'company_id', 'id');
+        return $this->belongsTo(\App\Models\Company::class, 'company_id', 'id');
     }
 
     /**

@@ -9,7 +9,7 @@
     @foreach($companies as $company)
         <tr>
             <td>{!! $company->name !!}</td>
-            <td>
+            <td class="text-center">
                 {!! Form::open(['route' => ['companies.destroy', $company->id], 'method' => 'delete']) !!}
                     <a href="{!! route('companies.show', [$company->id]) !!}" class='btn btn-info btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-info' data-toggle="tooltip" data-placement="top"
                         data-original-title="View client">

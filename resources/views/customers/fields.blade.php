@@ -45,8 +45,8 @@
 
 <!-- Bank Id Field -->
 <div class="form-group col-sm-6{{ $errors->has('bank_id') ? ' has-error' : '' }}">
-    {!! Form::label('bank_id', 'Bank Id:') !!}
-    {!! Form::text('bank_id', null, ['class' => 'form-control', 'placeholder' => 'Type bank_id..']) !!}
+    {!! Form::label('bank_id', 'Bank:') !!}
+    {!! Form::select('bank_id', $banks, null, ['class' => 'form-control', 'placeholder' => 'Pick a bank...']); !!}
     @if ($errors->has('bank_id'))
         <small class="help-block"> {{ $errors->first('bank_id') }}</small>
     @endif
@@ -54,8 +54,8 @@
 
 <!-- Company Id Field -->
 <div class="form-group col-sm-6{{ $errors->has('company_id') ? ' has-error' : '' }}">
-    {!! Form::label('company_id', 'Company Id:') !!}
-    {!! Form::text('company_id', null, ['class' => 'form-control', 'placeholder' => 'Type company_id..']) !!}
+    {!! Form::label('company_id', 'Company:') !!}
+    {!! Form::select('company_id', $companies, null, ['class' => 'form-control', 'placeholder' => 'Pick a company...']); !!}
     @if ($errors->has('company_id'))
         <small class="help-block"> {{ $errors->first('company_id') }}</small>
     @endif

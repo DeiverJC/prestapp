@@ -9,7 +9,7 @@
     @foreach($banks as $bank)
         <tr>
             <td>{!! $bank->name !!}</td>
-            <td>
+            <td class="text-center">
                 {!! Form::open(['route' => ['banks.destroy', $bank->id], 'method' => 'delete']) !!}
                     <a href="{!! route('banks.show', [$bank->id]) !!}" class='btn btn-info btn-outline btn-circle btn-lg m-r-5 center-icon-lg tooltip-info' data-toggle="tooltip" data-placement="top"
                         data-original-title="View client">
