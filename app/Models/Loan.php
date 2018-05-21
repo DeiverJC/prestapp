@@ -23,7 +23,7 @@ class Loan extends Model
     use SoftDeletes;
 
     public $table = 'loans';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -69,5 +69,13 @@ class Loan extends Model
     public function customer()
     {
         return $this->belongsTo(\App\Models\Customer::class, 'customer_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     **/
+    public function loanDetail()
+    {
+        return $this->hasOne(\App\Models\LoanDetail::class);
     }
 }

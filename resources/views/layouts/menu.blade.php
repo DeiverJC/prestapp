@@ -21,3 +21,8 @@
         <i class="mdi mdi-pencil fa-fw"></i><span class="hide-menu">Loans</span>
     </a>
 </li>
+<li>
+    <a href="{!! route('loanDetails.index') !!}" class="waves-effect {{ Request::is('loanDetails*') ? 'active' : '' }}">
+        <i class="mdi mdi-pencil fa-fw"></i><span class="hide-menu">Loan Details</span>
+    </a>
+</li>

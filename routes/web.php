@@ -52,3 +52,5 @@ Route::resource('customers', 'CustomerController');
 
 
 Route::resource('loans', 'LoanController');
+
+Route::resource('loanDetails', 'LoanDetailController');
