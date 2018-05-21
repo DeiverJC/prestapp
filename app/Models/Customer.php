@@ -34,6 +34,7 @@ class Customer extends Model
     public $fillable = [
         'fist_name',
         'last_name',
+        'full_name',
         'dni',
         'cellphone',
         'address',
@@ -49,6 +50,7 @@ class Customer extends Model
     protected $casts = [
         'fist_name' => 'string',
         'last_name' => 'string',
+        'full_name' => 'string',
         'dni' => 'integer',
         'cellphone' => 'integer',
         'address' => 'string',

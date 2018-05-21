@@ -1,8 +1,7 @@
 <table class="table table-hover manage-u-table color-table inverse-table" id="customers-table">
     <thead>
         <tr>
-            <th>Fist Name</th>
-        <th>Last Name</th>
+            <th>Full Name</th>
         <th>Dni</th>
         <th>Cellphone</th>
         <th>Address</th>
@@ -14,8 +13,7 @@
     <tbody>
     @foreach($customers as $customer)
         <tr>
-            <td>{!! $customer->fist_name !!}</td>
-            <td>{!! $customer->last_name !!}</td>
+            <td>{!! $customer->full_name !!}</td>
             <td>{!! $customer->dni !!}</td>
             <td>{!! $customer->cellphone !!}</td>
             <td>{!! $customer->address !!}</td>

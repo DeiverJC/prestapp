@@ -46,3 +46,9 @@ Route::resource('companies', 'CompanyController');
 
 
 Route::resource('customers', 'CustomerController');
+
+
+
+
+
+Route::resource('loans', 'LoanController');

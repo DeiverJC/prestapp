@@ -67,12 +67,13 @@ class CustomerController extends AppBaseController
     public function store(CreateCustomerRequest $request)
     {
         $input = $request->all();
+        $input['full_name'] = $request->fist_name . ' ' . $request->last_name;
 
         $customer = $this->customerRepository->create($input);
 
         Flash::success('Customer saved successfully.');
 
-        return redirect(route('customers.index'));
+        return redirect(route('loans.create'));
     }
 
     /**
